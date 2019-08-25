@@ -184,7 +184,7 @@ form.widthInput.addEventListener('change', function(e) {
     var val = (unit == 'mm') ? Number(e.target.value / 25.4) : Number(e.target.value);
     var dpi = Number(form.dpiInput.value);
     if (val > 0) {
-        if (val * dpi > maxSize) {
+        if (val * dpi > maxSize * 2) {
             errors.width.state = true;
             errors.width.msg = 'The maximum image dimension is ' + maxSize +
                 'px, but the width entered is ' + (val * dpi) + 'px.';
@@ -210,7 +210,7 @@ form.heightInput.addEventListener('change', function(e) {
     var val = (unit == 'mm') ? Number(e.target.value / 25.4) : Number(e.target.value);
     var dpi = Number(form.dpiInput.value);
     if (val > 0) {
-        if (val * dpi > maxSize) {
+        if (val * dpi > maxSize * 2) {
             errors.height.state = true;
             errors.height.msg = 'The maximum image dimension is ' + maxSize +
                 'px, but the height entered is ' + (val * dpi) + 'px.';
