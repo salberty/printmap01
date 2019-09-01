@@ -32,7 +32,7 @@
       "id": "background",
       "type": "background",
       "layout": {"visibility": "visible"},
-      "paint": {"background-color": "rgba(74, 74, 74, 1)"}
+      "paint": {"background-color": "rgba(198, 198, 198, 1)"}
     },
     {
       "id": "XYZ",
