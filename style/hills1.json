@@ -1,0 +1,57 @@
+{
+  "version": 8,
+  "name": "Mapbox Satellite",
+  "metadata": {
+    "mapbox:autocomposite": true,
+    "mapbox:type": "default",
+    "maputnik:renderer": "mbgljs"
+  },
+  "sources": {
+    "mapbox": {
+      "type": "raster",
+      "url": "mapbox://mapbox.satellite",
+      "tileSize": 256
+    },
+    "XYZ": {
+      "type": "raster",
+      "tiles": [
+        "https://maps.tilehosting.com/data/terrain-rgb/{z}/{x}/{y}.png?key=CrAC6C99N3DjqgzjoBOr"
+      ],
+      "minzoom": 0,
+      "maxzoom": 14
+    },
+    "hills": {
+      "type": "raster-dem",
+      "url": "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=CrAC6C99N3DjqgzjoBOr"
+    }
+  },
+  "sprite": "mapbox://sprites/mapbox/satellite-v9",
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "layout": {"visibility": "visible"},
+      "paint": {"background-color": "rgba(74, 74, 74, 1)"}
+    },
+    {
+      "id": "XYZ",
+      "type": "raster",
+      "source": "XYZ",
+      "layout": {"visibility": "none"}
+    },
+    {
+      "id": "hills",
+      "type": "hillshade",
+      "source": "hills",
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "hillshade-exaggeration": 1,
+        "hillshade-accent-color": "rgba(255, 255, 255, 1)",
+        "hillshade-illumination-anchor": "viewport",
+        "hillshade-illumination-direction": 335
+      }
+    }
+  ],
+  "id": "woujl7z6x"
+}
