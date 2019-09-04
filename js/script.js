@@ -74,7 +74,7 @@ try {
     map = new mapboxgl.Map({
         container: 'map',
         center: [0, 0],
-        zoom: 0.5,
+        zoom: 10,
         pitch: 0,
         style: style
     });
