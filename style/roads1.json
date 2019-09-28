@@ -19,7 +19,7 @@
     }
   },
   "sprite": "https://maputnik.github.io/osm-liberty/sprites/osm-liberty",
-  "glyphs": "https://maps.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=undefined",
+  "glyphs": "https://maps.tilehosting.com/fonts/{fontstack}/{range}.pbf?key=drA0M6CkEP1tlXy6KDVm",
   "layers": [
     {
       "id": "background",
