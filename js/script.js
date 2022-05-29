@@ -115,7 +115,7 @@ var maxSize;
 if (map) {
     var canvas = map.getCanvas();
     var gl = canvas.getContext('experimental-webgl');
-    maxSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
+    maxSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE)*2;
 }
 
 var errors = {
@@ -190,7 +190,7 @@ form.widthInput.addEventListener('change', function(e) {
                 'px, but the width entered is ' + (val * dpi) + 'px.';
         } else if (val * window.devicePixelRatio * 96 > maxSize) {
             errors.width.state = true;
-            errors.width.msg = 'The width is unreasonably big1!';
+            errors.width.msg = 'The width is unreasonably big2!';
         } else {
             errors.width.state = false;
             if (unit == 'mm') val *= 25.4;
@@ -216,7 +216,7 @@ form.heightInput.addEventListener('change', function(e) {
                 'px, but the height entered is ' + (val * dpi) + 'px.';
         } else if (val * window.devicePixelRatio * 96 > maxSize) {
             errors.height.state = true;
-            errors.height.msg = 'The height is unreasonably big1!';
+            errors.height.msg = 'The height is unreasonably big2!';
         } else {
             errors.height.state = false;
             if (unit == 'mm') val *= 25.4;
