@@ -190,7 +190,7 @@ form.widthInput.addEventListener('change', function(e) {
                 'px, but the width entered is ' + (val * dpi) + 'px.';
         } else if (val * window.devicePixelRatio * 96 > maxSize) {
             errors.width.state = true;
-            errors.width.msg = 'The width is unreasonably big!';
+            errors.width.msg = 'The width is unreasonably big1!';
         } else {
             errors.width.state = false;
             if (unit == 'mm') val *= 25.4;
@@ -216,7 +216,7 @@ form.heightInput.addEventListener('change', function(e) {
                 'px, but the height entered is ' + (val * dpi) + 'px.';
         } else if (val * window.devicePixelRatio * 96 > maxSize) {
             errors.height.state = true;
-            errors.height.msg = 'The height is unreasonably big!';
+            errors.height.msg = 'The height is unreasonably big1!';
         } else {
             errors.height.state = false;
             if (unit == 'mm') val *= 25.4;
