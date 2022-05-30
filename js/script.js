@@ -1,6 +1,6 @@
 /*
  * Print Maps - High-resolution maps in the browser, for printing
- * Copyright (c) 2015-2018 Matthew Petroff
+ * Copyright (c) 2015-2020 Matthew Petroff
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -69,18 +69,16 @@ function updateLocationInputs() {
 var map;
 try {
     var style = form.styleSelect.value;
-    if (style.indexOf('tilehosting') >= 0)
+    if (style.indexOf('maptiler') >= 0)
         style += '?key=' + mapTilerAccessToken;
     map = new mapboxgl.Map({
         container: 'map',
         center: [0, 0],
-        zoom: 10,
+        zoom: 0.5,
         pitch: 0,
         style: style
     });
-    map.addControl(new mapboxgl.NavigationControl({
-        position: 'top-left'
-    }));
+    map.addControl(new mapboxgl.NavigationControl());
     map.on('moveend', updateLocationInputs).on('zoomend', updateLocationInputs);
     updateLocationInputs();
 } catch (e) {
@@ -115,7 +113,7 @@ var maxSize;
 if (map) {
     var canvas = map.getCanvas();
     var gl = canvas.getContext('experimental-webgl');
-    maxSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE)*2;
+    maxSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
 }
 
 var errors = {
@@ -190,7 +188,7 @@ form.widthInput.addEventListener('change', function(e) {
                 'px, but the width entered is ' + (val * dpi) + 'px.';
         } else if (val * window.devicePixelRatio * 96 > maxSize) {
             errors.width.state = true;
-            errors.width.msg = 'The width is unreasonably big2!';
+            errors.width.msg = 'The width is unreasonably big!';
         } else {
             errors.width.state = false;
             if (unit == 'mm') val *= 25.4;
@@ -216,7 +214,7 @@ form.heightInput.addEventListener('change', function(e) {
                 'px, but the height entered is ' + (val * dpi) + 'px.';
         } else if (val * window.devicePixelRatio * 96 > maxSize) {
             errors.height.state = true;
-            errors.height.msg = 'The height is unreasonably big2!';
+            errors.height.msg = 'The height is unreasonably big!';
         } else {
             errors.height.state = false;
             if (unit == 'mm') val *= 25.4;
@@ -249,7 +247,7 @@ form.styleSelect.addEventListener('change', function() {
     'use strict';
     try {
         var style = form.styleSelect.value;
-        if (style.indexOf('tilehosting') >= 0)
+        if (style.indexOf('maptiler') >= 0)
             style += '?key=' + mapTilerAccessToken;
         map.setStyle(style);
     } catch (e) {
@@ -387,7 +385,7 @@ function generateMap() {
     var unit = form.unitOptions[0].checked ? 'in' : 'mm';
 
     var style = form.styleSelect.value;
-    if (style.indexOf('tilehosting') >= 0)
+    if (style.indexOf('maptiler') >= 0)
         style += '?key=' + mapTilerAccessToken;
 
     var zoom = map.getZoom();
@@ -431,7 +429,7 @@ function createPrintMap(width, height, dpi, format, unit, zoom, center,
         fadeDuration: 0,
         attributionControl: false
     });
-    renderMap.once('load', function() {
+    renderMap.once('idle', function() {
         if (format == 'png') {
             renderMap.getCanvas().toBlob(function(blob) {
                 saveAs(blob, 'map.png');
