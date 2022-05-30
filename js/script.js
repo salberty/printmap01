@@ -21,7 +21,7 @@
  * THE SOFTWARE.
  */
  
-mapboxgl.accessToken = 'pk.eyJ1IjoibXBldHJvZmYiLCJhIjoiT1F0R1hobyJ9.ZMy8qTCk-OxBhAb3BG2iog';
+mapboxgl.accessToken = 'pk.eyJ1IjoibXBldHJvZmYiLCJhIjoiY2wzc3JwNzBiMWc2aDNpcnN2bXc2a3BncCJ9.mnNeabUp3Qs1xHIDAWenGQ';
 var mapTilerAccessToken = 'drA0M6CkEP1tlXy6KDVm';
 
 var form = document.getElementById('config');
