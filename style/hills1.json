@@ -15,7 +15,7 @@
     "XYZ": {
       "type": "raster",
       "tiles": [
-        "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=CrAC6C99N3DjqgzjoBOr"
+        "https://api.maptiler.com/tiles/terrain-rgb/{z}/{x}/{y}.png?key=CrAC6C99N3DjqgzjoBOr"
       ],
       "minzoom": 0,
       "maxzoom": 14
