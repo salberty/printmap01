@@ -15,14 +15,14 @@
     "XYZ": {
       "type": "raster",
       "tiles": [
-        "https://maps.tilehosting.com/data/terrain-rgb/{z}/{x}/{y}.png?key=drA0M6CkEP1tlXy6KDVm"
+        "https://maps.tilehosting.com/data/terrain-rgb/{z}/{x}/{y}.png?key=CrAC6C99N3DjqgzjoBO"
       ],
       "minzoom": 0,
       "maxzoom": 14
     },
     "hills": {
       "type": "raster-dem",
-      "url": "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=drA0M6CkEP1tlXy6KDVm"
+      "url": "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=CrAC6C99N3DjqgzjoBO"
     }
   },
   "sprite": "mapbox://sprites/mapbox/satellite-v9",
