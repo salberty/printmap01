@@ -21,8 +21,8 @@
  * THE SOFTWARE.
  */
  
-mapboxgl.accessToken = 'pk.eyJ1IjoibXBldHJvZmYiLCJhIjoiY2wzc3JwNzBiMWc2aDNpcnN2bXc2a3BncCJ9.mnNeabUp3Qs1xHIDAWenGQ';
-var mapTilerAccessToken = 'drA0M6CkEP1tlXy6KDVm';
+mapboxgl.accessToken = 'pk.eyJ1Ijoibm90YWxlbWVzYSIsImEiOiJjazhiOTZnb2gwM3NxM2ZucGp1Z21mNjZ0In0.Z4nS6wdB4WzflkDItyXSIQ';
+var mapTilerAccessToken = 'CrAC6C99N3DjqgzjoBO';
 
 var form = document.getElementById('config');
 
