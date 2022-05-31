@@ -22,7 +22,7 @@
  */
  
 mapboxgl.accessToken = 'pk.eyJ1Ijoibm90YWxlbWVzYSIsImEiOiJjazhiOTZnb2gwM3NxM2ZucGp1Z21mNjZ0In0.Z4nS6wdB4WzflkDItyXSIQ';
-var mapTilerAccessToken = 'CrAC6C99N3DjqgzjoBO';
+var mapTilerAccessToken = 'CrAC6C99N3DjqgzjoBOr';
 
 var form = document.getElementById('config');
 
